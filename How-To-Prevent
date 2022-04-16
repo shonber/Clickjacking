@@ -1,1 +1,7 @@
+The first solution is adding a specific header to the httpd file.
+The header is: Header set X-Frame-Options "DENY"
+This header will disallow clickjacking by disallowing other sites from making an iframe of the vulnerable site.
 
+The second solution is CSP.
+The rule is: Header set Content-Security-Policy "frame-ancestors 'none';"
+This rule will iframes are blocked when this rule is used.
